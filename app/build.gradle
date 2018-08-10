@@ -1,9 +1,9 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
 
+apply from: 'gradle-script/dependencies.gradle'
 android {
     compileSdkVersion 27
     defaultConfig {
@@ -20,14 +20,39 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    dataBinding {
+        enabled = true
+    }
+
 }
 
 dependencies {
+
+    //Glide
+    implementation glide
+    kapt 'com.github.bumptech.glide:compiler:4.6.1'
+    //Retrofit
+    implementation retrofitDependencies.retrofit
+    implementation retrofitDependencies.gson
+    implementation retrofitDependencies.rxAdapterJava
+
+
+
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'com.android.support:appcompat-v7:27.1.1'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    //supportDesign
+    implementation supportDependencies.design
+    implementation supportDependencies.recyclerView
+    implementation supportDependencies.cardView
+    implementation supportDependencies.appCompat
+    //Constraint
+    implementation constraintLayoutDependencies.constraint
+    //Testing
+    implementation testingDependencies.junit
+    implementation testingDependencies.mockito
+    /*  testImplementation 'junit:junit:4.12'
+      androidTestImplementation 'com.android.support.test:runner:1.0.2'
+      androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'*/
+    //Mockito
+    // testImplementation "org.mockito:mockito-core:2.15.0"
 }
