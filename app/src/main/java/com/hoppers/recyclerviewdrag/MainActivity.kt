@@ -1,6 +1,4 @@
 package com.hoppers.recyclerviewdrag
-
-import android.arch.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 
