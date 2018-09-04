@@ -31,7 +31,7 @@ dependencies {
     //Glide
     implementation glide
     kapt 'com.github.bumptech.glide:compiler:4.6.1'
-    //For JP
+    //Feature
 
     //Retrofit
 
