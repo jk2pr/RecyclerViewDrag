@@ -30,9 +30,6 @@ dependencies {
     //Glide
     implementation glide
     kapt 'com.github.bumptech.glide:compiler:4.6.1'
-    //feature
-
-    //Retrofit
 
     implementation retrofitDependencies.retrofit
     implementation retrofitDependencies.gson
