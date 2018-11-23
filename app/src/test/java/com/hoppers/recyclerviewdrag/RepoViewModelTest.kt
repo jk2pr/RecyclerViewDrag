@@ -1,8 +1,7 @@
-package com.hoppers.recyclerviewdrag.viewmodel
+package com.hoppers.recyclerviewdrag
 
 import org.junit.Before
 
-import org.junit.Assert.*
 
 class RepoViewModelTest {
 

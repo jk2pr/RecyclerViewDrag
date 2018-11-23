@@ -1,15 +1,15 @@
 apply plugin: 'com.android.application'
-apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 apply from: 'gradle-script/dependencies.gradle'
 android {
-    compileSdkVersion 27
+    compileSdkVersion 28
     defaultConfig {
         applicationId "com.hoppers.recyclerviewdrag"
         minSdkVersion 15
-        targetSdkVersion 27
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -27,10 +27,11 @@ android {
 }
 
 dependencies {
-    //Glide
-    implementation glide
-    kapt 'com.github.bumptech.glide:compiler:4.6.1'
 
+    kapt 'com.github.bumptech.glide:compiler:4.6.1'
+    kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version" // use kapt for Kotlin
+//Glide
+    implementation glide
     implementation retrofitDependencies.retrofit
     implementation retrofitDependencies.gson
     implementation retrofitDependencies.rxAdapterJava
@@ -44,6 +45,9 @@ dependencies {
     implementation supportDependencies.recyclerView
     implementation supportDependencies.cardView
     implementation supportDependencies.appCompat
+
+    // Live Data
+    implementation lifecycle.lifecycleExtension
     //Constraint
     implementation constraintLayoutDependencies.constraint
     //Testing

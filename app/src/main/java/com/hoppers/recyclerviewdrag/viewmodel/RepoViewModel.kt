@@ -1,7 +1,7 @@
 package com.hoppers.recyclerviewdrag.viewmodel
 
-import android.arch.lifecycle.MutableLiveData
-import android.arch.lifecycle.ViewModel
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import com.hoppers.recyclerviewdrag.model.Repo
 
 class RepoViewModel : ViewModel() {
